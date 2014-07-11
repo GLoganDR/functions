@@ -26,6 +26,52 @@ function makeUpper(string){  //how to make a function to just turn lower case to
   return string.toUpperCase();
 }
 
+//Teacher's Code to make tax percentage and total and add them together
+
+//function addTax(amount, tax){
+//  return amount + (amount * (tax/100));
+//}
+
+function addTax(total, tax){//takes total and tax and adds it together
+  var total
+  var tax = new Number(tax.replace("%", ""));
+  return addTax(total, tax);
+}
+function addTax(total, tax){
+  return total + total * tax / 100;//returns total plus tax percentage
+}
+
+console.log(addTax(999, 10));// tests the code to add tax and percentage
+
+//Function to sum up everything inside of an Array [] 
+
+function sum(c){    //funtion that adds everything inside of an array together//
+    
+    sumc = 0;   //defines sumc as a number
+    for(var l = 0; l < c.length; l++){// this says starting from l = 0 (l is a number) as long as less than c.length. after each loop, add one to l; the loop continues as long as true
+        sumc += c[l]; //this says sum = sum plus the element of c 2 which is l
+    }
+    return sumc;// sumc is the sum of everything inside of c which is everything inside of []
+}
+
+var array1 = [1,2,3,5,7];//sets the array and tests the function for array sum
+console.log(sum(array1));
+
+//Teacher's code//
+function sum(numbers){
+  var sigma = 0;// Greek for 'Sum' identified as a number by = 0
+
+  for(var i = 0; i < numbers.length; i++){// for loop
+  sigma += numbers[i];// using the for loop's rules, it equates sigma to the sum of the numbers inside of the array
+  }
+  return sigma;
+}
+
+var m;
+m = sum([2,3,4]);// declares m as the function "sum" as the addition of the numbers in the array []//
+console.log(m);
+
+
 function canDrink(age){
  if(age >= 21){   //or we could just write "return(age >= 21);"
    return true;
@@ -34,6 +80,28 @@ function canDrink(age){
  }
 
 }
+function letterGrade(n){// this sets the function letterGrade to change a number to a letter depending on the number.
+  
+  if(n >= 90){ //if it's 90 or above, it's an A and so on.)
+    return 'A';
+}else if(n >= 80){
+    return 'B';
+}else if(n >= 70){
+    return 'C';
+}else if(n >= 60){
+    return 'D';
+}else{
+    return 'F'
+}
+}
+
+var g;
+g = letterGrade(90);
+console.log(g);
+g = letterGrade(83);
+console.log(g);
+g = letterGrade(50);
+console.log(g);
 
 //how to access whether or not the person can drink//
 var d;
@@ -81,4 +149,3 @@ var  r = area(9, 6)
 
 var v = volume(10, 4, 12);
   console.log(v);
-
