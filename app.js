@@ -162,7 +162,7 @@ var v = volume(10, 4, 12);
 }
 
 var q;
-q = factorial(0);
+q = factorial(50);
 console.log(q);
 
 //Teacher's Code//
@@ -170,12 +170,39 @@ console.log(q);
 function factorial(n){
   var product = 1;
 
-  for(var i = 2; i <= n; i++){
-    product *= i;
+  for(var i = 2; i <= n; i++){  //this method uses a for loop//
+    product *= i;   //product is the i multiplication loop
   }
-  return product;
+  return product; //returns product (i)
 }
 
 console.log(factorial(0));
 console.log(factorial(5));
 
+function rollDie(){   //Math.random() gives a random number
+ return Math.floor(Math.random() * 6) + 1;  //Math.floor rounds to the next lowest integer
+}   //in the function, I'm adding one to the highest number of 5 
+//return says: 0,1,2,3,4,5 saying there can only be 6 random numbers, 5 being the highest, then add one to get to 6 for 6 random numbers (a standard die).
+var d;
+d = rollDie();
+console.log(d);
+
+function isPair(roll1, roll2){
+  return roll1 === roll2;
+}
+
+console.log(1, 2);
+
+function countPairs(n){
+  var totalPairs = 0
+    for(i = 1; i < n; i++){
+      if(isPair(rollDie(),rollDie()) === true){
+        totalPairs++
+      }
+    }
+
+  return totalPairs
+}
+
+var n_countPairs = prompt('How many pairs of dice to test? ')
+console.log('Of ' + n_countPairs + ' rolls of die, ' + countPairs(n_countPairs) + ' are pairs.');
