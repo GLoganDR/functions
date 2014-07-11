@@ -149,3 +149,33 @@ var  r = area(9, 6)
 
 var v = volume(10, 4, 12);
   console.log(v);
+
+// Factorial Function to take a number and multiply all of the numbers up to that #//
+
+  var f = []  //sets the variable f as an array.
+  function factorial(numbers){  //declares the function to be factorial 
+    if(numbers === 0 || numbers === 1)  // says that if the number is 0 or 1 to return 1 (this will be a recursive function with multiple returns)//
+      return 1; //returns 1 for 1 and 0
+  if(f[numbers] > 0)  //if the numbers in the array are greater than 0
+    return f[numbers];// return it as this 
+  return f[numbers] = factorial(numbers - 1) * numbers//says that f[numbers] is equal to each number minus one times and go backwards multiplying until 0
+}
+
+var q;
+q = factorial(0);
+console.log(q);
+
+//Teacher's Code//
+
+function factorial(n){
+  var product = 1;
+
+  for(var i = 2; i <= n; i++){
+    product *= i;
+  }
+  return product;
+}
+
+console.log(factorial(0));
+console.log(factorial(5));
+
